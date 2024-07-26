@@ -1,0 +1,106 @@
+/*   Threading   */
+
+class Mythread extends Thread{
+ public void run(){
+    System.out.println("Hello");
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+	Mythread m1=new Mythread();
+	m1.run();
+	}
+}
+
+***************************************
+
+class Mythread implements Runnable{
+    public void run(){
+    System.out.println("Hello");
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+        Runnable m1=new Mythread();
+        Thread obj=new Thread(m1);
+        obj.run();
+    }
+} 
+
+***************************************
+
+ // Printing random numbers
+
+class Mythread extends Thread{
+    public void run(){
+        for(int i=1;i<51;i++)
+        System.out.println(i);
+    }
+}
+class Yourthread extends Thread{
+    public void run(){
+        for(int i=51;i<101;i++)
+        System.out.println(i);
+    }
+}
+class Main{
+    public static void main(String args[]){
+        Mythread m1=new Mythread();
+        Yourthread y1=new Yourthread();
+        m1.start();
+        y1.start();
+        for(int i=101;i<151;i++){
+            System.out.println(i);
+        }
+    }
+}
+
+***************************************** 
+
+// Multi threading
+
+class Printer{
+    void printDoc(int page,String s){
+        for(int i=1;i<=page;i++)
+            System.out.println("Printing "+i+" page for "+s);
+    }
+}
+class Mathsthread extends Thread{
+    Printer p;
+    Mathsthread(Printer p){
+        this.p=p;
+    }
+    public void run(){
+        this.p.printDoc(5,"Maths");
+    }   
+}
+class Sciencethread extends Thread{
+    Printer p;
+    Sciencethread(Printer p){
+        this.p=p;
+    }
+    public void run(){
+        this.p.printDoc(7,"Science");
+    }   
+}
+class Main{
+    public static void main(String args[]){
+        Printer p1=new Printer();
+        Mathsthread m1=new Mathsthread(p1);
+        Sciencethread s1=new Sciencethread(p1);
+        m1.start();
+    /*    try{
+        m1.join();
+        }
+        catch(InterruptedException e){
+          //  e.printStackTrace();
+        } 
+    */
+        s1.start();
+    }
+}
+
+********************************************
+

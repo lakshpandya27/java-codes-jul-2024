@@ -1,0 +1,149 @@
+Exception Handling
+
+/*
+public class Main
+{
+	public static void main(String[] args) {
+     
+    /* //try catch block
+       
+        try{
+		  //  int n=10/0;
+		  //   System.out.println(n);
+		    
+		    int a[]=new int[5];
+		    a[7]=10;
+		    System.out.println(a[7]);
+		}
+		catch(Exception e){
+		    System.out.println(e);
+		}
+	*/
+	
+	/*  //Nested try catch
+	
+		 try{
+	    try{
+	    int n=10/0;
+	    System.out.println(n);
+	    }
+	    catch(Exception ex){
+	    int a[]=new int[5];
+	    a[7]=10;
+	    System.out.println(a[7]);
+	    }
+		 }
+        catch(Exception e){
+		    System.out.println("Hello");
+		}
+	*/
+		
+	/*	//finally block
+      
+        try{
+		    int a[]=new int[5];
+		    a[7]=10;
+		    System.out.println(a[7]);
+		}
+		catch(Exception e){
+		    System.out.println(e);
+		}
+	    finally{
+		    System.out.println("Finally block");
+		}
+	*/
+
+	/*	// multiple catch block
+	
+		try{
+		  //  int n=10/0;
+		  //  System.out.println(n);
+		    
+		    int a[]=new int[5];
+		    a[7]=10;
+		    System.out.println(a[7]);
+		}
+		catch(ArithmeticException e){
+		    System.out.println(e);
+		}
+	   catch(ArrayIndexOutOfBoundsException e){
+		    System.out.println(e);
+		}
+    */
+    
+    /*   // throw block
+        try{
+            throw new Exception("user Exception");
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+	*/
+	/*
+	  // throws
+	    try{
+	        f1();
+	    }
+	    catch(Exception e){
+	        System.out.println(e);
+	    }
+	}
+     static void f1() throws ArithmeticException{
+	    int a=10/0;
+      }
+ }
+*/
+
+/*
+// user defined Exception
+class UdException extends Throwable{
+    String s;
+    UdException(String s){
+        this.s=s;
+    }
+    public String toString(){
+        return " It says "+this.s;
+    }
+}
+class Main{
+    public static void main (String[] args) {
+        try{
+            throw new UdException("User defined Exception");
+        } 
+        catch(UdException e){
+            System.out.println(e);
+        }
+    }
+}
+*/
+
+/*   // using all 5 keywords of Exception
+
+class AExcept extends Throwable{
+    String s;
+    AExcept(String s){
+        this.s=s;
+    }
+    public String toString(){
+        return "It says "+this.s;
+    } 
+}
+class Main{
+    static void f1() throws ArithmeticException{
+        throw new ArithmeticException("Hello");
+    }
+    public static void main (String[] args) {
+        try{
+          //  f1();
+            throw new AExcept("User defined Exception");
+            
+        }
+        catch(AExcept e){
+            System.out.println(e);
+        }
+        finally{
+            System.out.println("Executed");
+        }
+    }
+}
+*/

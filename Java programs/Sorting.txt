@@ -1,0 +1,195 @@
+package prgm;
+
+import java.util.Scanner;
+
+public class Ds_program {
+	/* 
+	   static void insertsort(int arr[],int n) {		//Insertion Sorting 
+		int i=0,j,key=0;
+		for(j=1;j<n;j++) {
+			key=arr[j];
+			i=j-1;
+		
+		while(i>=0 && arr[i]>key) {
+			arr[i+1]=arr[i];
+			i=i-1;
+		}
+		arr[i+1]=key;
+	   }
+	}
+	*/
+	 /*
+	
+	static void bubblesort(int arr[],int n) {		//Bubble Sorting
+		int i=0,k;
+		for(k=0;k<(n-1);k++) {	      //comparing
+			for(i=0;i<(n-k-1);i++) {      //swapping
+				if(arr[i]>arr[i+1])
+				{
+			     	int t;
+			    	t=arr[i];
+				  arr[i]=arr[i+1];
+				   arr[i+1]=t;
+			   }
+		    }
+               }
+	}
+     */
+
+        /*
+	 static void selectionsort(int arr[],int n) {		//Selection sorting
+		int min_idx;
+		for(int i=0;i<n;i++) {
+		    min_idx=i;
+		    for(int j=i+1;j<n;j++) {
+			 if(arr[j]<arr[min_idx]) {
+			   min_idx=j;
+			  }
+		     }
+		    int t=arr[min_idx];
+		    arr[min_idx]=arr[i];
+		    arr[i]=t;
+		 }
+	   }   
+      */
+
+      /*
+	static void mergesort(int arr[],int start,int end) {     // Merge sorting
+		 if(start<end) {
+			 int mid=(start+end)/2;
+			 mergesort(arr,start,mid);
+			 mergesort(arr,mid+1,end);
+			 merger(arr,start,mid,end);
+		 }
+	 }
+	
+	 static void merger(int arr[],int start,int mid,int end) {
+		int ls= mid-start+1;
+		int rs= end-mid;
+		int la[]=new int[ls];
+		int ra[]=new int[rs];
+		
+		for(int i=0; i<ls; i++) {
+			la[i]=arr[i+start];
+		}
+		for(int j=0; j<rs; j++) {
+			ra[j]=arr[mid+1+j];
+		}
+		
+		int i=0,j=0,k=start;
+		
+		while(i<ls && j<rs) 
+		{
+			if(la[i] < ra[j]) 
+				arr[k++]=la[i++];
+			else
+				arr[k++]=ra[j++];
+		}
+		while(i < ls){
+			arr[k++]=la[i++]; 
+		}
+		while(j < rs){
+			arr[k++]=ra[j++]; 
+		}
+	}
+	  */
+
+	/*   
+         static void quicksort(int arr[],int start,int end) {	      // Quick sorting
+	    if(start<end) {
+		  int pi=partition(arr,start,end);
+		  quicksort(arr,start,pi-1);
+		  quicksort(arr,pi+1,end);
+		}
+	  }
+	
+	  static int partition(int arr[],int start,int end) {
+		  int pivot=arr[end];
+		  int pi=start-1;
+		  for(int i=start;i<end;i++) {
+		      if(arr[i]<pivot) {
+			  ++pi;
+			  int t=arr[i];
+			  arr[i]=arr[pi];
+			  arr[pi]=t;	
+		     }
+		  }
+		  ++pi;
+		  int m=arr[pi];
+		  arr[pi]=arr[end];
+		  arr[end]=m;
+		  return pi;
+	  }
+	*/
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s=new Scanner(System.in);
+		int n;
+		n=s.nextInt();
+		int arr[]=new int[n];
+		for(int i=0;i<n;i++) { 
+			arr[i]=s.nextInt();
+		}
+		insertsort(arr,n);
+		bubblesort(arr,n);
+		selectionsort(arr,n);
+		mergesort(arr,0,n-1);
+		quicksort(arr,0,n-1);
+		for(int i=0;i<n;i++) {
+			System.out.println(arr[i]);
+		}
+	}
+}
+
+****************************************
+
+/SEARCHING ALGORITHM/
+
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+import java.util.*;
+class Main {
+     /*
+ 	static int bin(int a[],int low,int high,int key){	//Binary search
+    	    int mid=(low+high)/2;
+	    if(low<=high)
+	     {
+	       if(key==a[mid])
+	           return mid;
+	       if(key < a[mid]) {
+	           return bin(a,low,mid-1,key);
+	        {
+	      return bin(a,mid+1,high,key);
+	    }
+	    return -1;
+	}
+    */
+
+     /*
+	 static int linear(int a[],int n,int key){		//linear search
+	    for(int i=0;i<n;i++)
+	    {
+	        if(key==a[i])
+	        return i;
+	    }
+	    return -1;
+	}	
+	*/
+
+	public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+	int n=s.nextInt();
+	int low=0,high=n-1;
+	int a[]=new int[n];
+	for(int i=0;i<n;i++){
+	    a[i]=s.nextInt();
+	}
+	int key=s.nextInt();
+       // int m=bin(a,low,high,key);
+	int m=linear(a,n,key);
+	System.out.println(m+"");
+	}
+}
+
+**********************************

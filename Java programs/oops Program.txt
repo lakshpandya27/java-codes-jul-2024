@@ -1,0 +1,339 @@
+import java.util.Scanner;
+
+1) POLYMORPHISM 
+
+/*  STATIC POLYMORPHISM  */
+
+class Abc{
+    void f1(int n){
+        System.out.println(n);
+    }
+    void f1(int a,int b){
+        System.out.println(a*b);
+    }
+}
+class Main
+{
+	public static void main(String[] args) {
+	  Abc a=new Abc();
+	    a.f1(5);
+	    a.f1(3,5);
+	}
+}
+
+----------------------------------------
+
+/*  DYNAMIC POLYMORPHISM  */
+
+class Parent{
+    void f1(int n){
+        System.out.println("Hello "+n);
+    }
+}
+class Child extends Parent{
+    void f1(int n){
+        System.out.println("Hii "+n);
+    }
+}
+class Main
+{
+	public static void main(String[] args) {
+	Child c=new Child();
+	 c.f1(5);
+	}	
+}
+
+----------------------------------------
+
+/*  ACCESS MODIFERS (Public)  */
+
+class Abc{
+    public int a,b;
+    void print(){
+        System.out.println(a+" "+b);
+    }
+}
+class Main
+{
+	public static void main(String[] args) {
+	Abc a1=new Abc();
+        a1.a=10;
+        a1.b=20;
+        a1.print();
+	}
+}
+
+----------------------------------------
+
+/*  ACCESS MODIFIERS (Private)  */
+
+class Abc{
+    private int a;
+    private int b;
+    void set(int a,int b){
+        this.a=a;
+        this.b=b;
+    }
+    void print(){
+        System.out.println(a+b);
+    }
+}
+class Main
+{
+	public static void main(String[] args) {
+	Abc a1=new Abc();
+	a1.set(5,2);
+	a1.print();
+	}
+}
+
+----------------------------------------
+
+/*  SETTERS AND GETTERS  */
+
+class Abc{
+    private int age;
+    void setage(int age){
+        this.age=age;
+    }
+    int getage(){
+        return age;
+    }
+}
+class Main
+{
+	public static void main(String[] args) {
+	Abc a1=new Abc();
+        a1.setage(30);
+	int b=a1.getage();
+ 	System.out.println("Hello "+b);
+	}
+}
+
+----------------------------------------
+
+2) KEYWORDS
+
+
+/* 'final'- KEYWORD  */
+
+class Parent{
+  //  final int a=10;
+  final void f1(int n){
+      System.out.println("Hello "+n);
+  }
+}
+class Child extends Parent{
+    void f1(int n){
+        System.out.println("Hii "+n);
+    }
+}
+class Main
+{
+	public static void main(String[] args) {
+	Parent a1=new Parent();
+
+    //  a1.a=20;
+    //  System.out.println(a1.a);
+
+	 a1.f1(5);
+	}	
+}
+
+----------------------------------------
+
+/* 'this'- KEYWORD  */
+
+class Abc{
+    int a=10;
+    void f1(){
+        System.out.println(this.a);
+    }
+}
+class Main
+{
+	public static void main(String[] args) {
+	Abc a1=new Abc();
+	a1.f1();
+	}
+}
+
+----------------------------------------
+
+/* 'this'- Keyword for METHOD  */
+
+class Abc{
+    int a=10;
+    void f1(){
+        System.out.println("Hello ");
+    }
+    void f2(){
+        this.f1();
+    }
+}
+class Main
+{
+	public static void main(String[] args) {
+	 Abc a1=new Abc();
+	 a1.f2();
+	}
+}
+
+----------------------------------------
+
+/* 'this'- Keyword for CONSTRUCTOR  */
+
+class Abc{
+    Abc(int a,int b){
+        System.out.println(a+b);
+    }
+    Abc(){
+         this(5,3);
+        System.out.println("Hello ");
+    }
+}
+class Main
+{
+	public static void main(String[] args) {
+	 Abc a1=new Abc(5,13);
+	 Abc a2=new Abc();
+	}
+}
+
+----------------------------------------
+
+/* 'super' - Keyword for VARIABLE  */
+
+class A{
+    int pid=101;
+}
+class B extends A{
+    int pid=500;
+    void print(){
+        System.out.println(super.pid);
+        System.out.println(this.pid);
+    }
+}
+class Main
+{
+	public static void main(String[] args) {
+	B b=new B();
+	b.print();
+	}
+}
+
+----------------------------------------
+
+/* 'super'- Keyword for METHOD  */
+
+class A{
+    void f1(){
+        System.out.println("Parent f1");
+    }
+}
+class B extends A{
+    void f1(){
+        System.out.println("Child f1");
+    }
+    void print(){
+        super.f1();
+     //  this.f1();
+    }
+}
+class Main
+{
+	public static void main(String[] args) {
+	B b=new B();
+	b.print();
+	}
+}
+
+----------------------------------------
+
+/* 'super'-Keyword for CONSTRUCTOR  */
+
+class A{
+    A(int a,int b){
+        System.out.println("From A "+a+b);
+    }
+}
+class B extends A{
+    B(){
+        super(10,20);
+    }
+} 
+class Main
+{
+	public static void main(String[] args) {
+	B b=new B();
+	}
+}
+
+----------------------------------------
+
+/* 'static' -KEYWORD  */
+
+class A{
+    static int age;
+    void print(){
+        System.out.println(age);
+    }
+}
+class Main
+{
+	public static void main(String[] args) {
+	A a1=new A();
+        a1.age=30;
+        A a2=new A();
+        a2.age=40;
+        a1.print();
+        a2.print();
+	}
+}
+
+----------------------------------------
+
+3) ENCAPSULATION
+
+class A{
+    int a;
+    int b;
+    void print(){
+        System.out.println(a+b);
+    }
+}
+class Main
+{
+	public static void main(String[] args) {
+	A a1=new A();
+        A a2=new A();
+        a1.a=20;
+        a1.b=10;
+        a2.a=50;
+        a2.b=30;
+        a1.print();
+        a2.print();  
+	} 
+}
+
+----------------------------------------
+
+4) ABSTRACTION
+
+abstract class A{
+    abstract void f1();
+}
+class B extends A{
+    void f1(){
+        System.out.println("Hello..");
+    }
+}
+class Main
+{
+	public static void main(String[] args) {
+	A a1=new B();
+        a1.f1();
+	}
+}
+
+----------------------------------------

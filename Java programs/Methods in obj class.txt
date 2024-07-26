@@ -1,0 +1,131 @@
+METHODS INSIDE OBJECT CLASS:
+
+import java.util.Scanner;
+
+1) /*  getClass()  */
+
+class Main
+{
+	public static void main(String[] args) {
+	   type(5.3);
+	}
+	static void type(Object obj){
+           System.out.println(obj.getClass());
+   	}
+}
+
+-----------------------------------------
+
+2) /*  equals()  */
+
+class A{
+  //  int a=10;
+}
+class Main
+{
+	public static void main(String[] args) {
+	A a1=new A();
+	A a2=new A();
+	System.out.println(a1.equals(a2));
+	}
+}
+
+-----------------------------------------
+
+3) /*  clone()  */
+
+class A{
+    int a=10;
+    A(){
+        this.a=a;
+    }
+    public Object clone()throws CloneNotSupportedException{  
+        return super.clone();  
+    }  
+}
+class Main
+{
+	public static void main(String[] args) {
+	
+		try{
+	  A a1=new A();
+	  A a2=(A)a1.clone();
+	  System.out.println(a1.a+" ");
+	  System.out.println(a2.a+" ");
+	}
+	catch(CloneNotSupportedException c){}  
+	}
+}
+
+-----------------------------------------
+
+4) /*  hashCode()  */  
+
+class A{
+    int a;
+    A(int a){
+        this.a=a;
+    }
+}
+class Main
+{
+	public static void main(String[] args) {
+	A a1=new A(6);
+	System.out.println(a1); //A@3b22cdd0
+	System.out.println(a1.hashCode());   //992136656
+	}
+}
+
+-----------------------------------------
+
+5) /*  toString()  */
+
+class A{
+    int a,b;
+    A(int a,int b){
+        this.a=a;
+        this.b=b;
+    }
+    public String toString(){
+        return a+" "+b;     	// a1=10 20 ; a2= 30 40
+    }
+}
+class Main
+{
+	public static void main(String[] args) {
+	A a1=new A(10,20);
+	A a2=new A(30,40);
+	System.out.println(a1);	   // A@3b22cdd0
+	System.out.println(a2);	   // A@1e81f4dc
+	}
+}
+
+-----------------------------------------
+
+6) /*  finalize()  */
+
+class A{
+    A(){
+        System.out.println("Object is created");
+    }
+    protected void finalize(){
+        System.out.println("Object destroyed");
+    }    
+}
+class Main
+{
+	public static void main(String[] args) {
+	 A a1=new A();
+	 A a2=new A();
+	 a1=a2;
+	 new A();
+	 System.gc();
+	}
+}
+
+-----------------------------------------
+
+
+
+
+ 

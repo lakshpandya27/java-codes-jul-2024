@@ -1,0 +1,339 @@
+PATTERN PRINTING:
+ 
+package program;
+public class Program {
+	public static void main(String[] args) {
+	// TODO Auto-generated method string
+ 	/*
+	 1
+	 12
+	 123
+	 1234
+ 
+	for(int i=1;i<=4;i++)
+	{
+	   for(int j=1;j<=i;j++)
+	    {
+		System.out.print(j);
+	    }
+	System.out.println();
+	}
+	*/
+
+	/*
+	 1
+	 22
+	 333
+	 4444	
+	 55555
+		 
+	for(int i=1;i<=5;i++)
+	{
+	   for(int j=1;j<=i;j++)
+	    {
+		System.out.print(i);
+	    }
+	System.out.println();
+	}
+	*/
+		
+	/*
+	 *
+	 **
+	 ***
+	 ****
+ 
+	for(int i=1;i<=4;i++)
+	{
+	   for(int j=1;j<=i;j++)
+	    {
+		System.out.print("*");
+	    }
+	System.out.println();
+	}	
+	*/
+		
+	/*
+	 *****
+	 ****	
+	 ***
+	 **
+	 *
+		 
+	for(int i=5;i>=1;i--)
+	{
+	   for(int j=1;j<=i;j++)
+	    {
+		System.out.print("*");
+	    }
+	System.out.println();
+	}
+	*/
+			
+	/*
+	 12345
+	 1234
+	 123
+	 12
+	 1
+		 
+	for(int i=5;i>=1;i--)
+	{
+	   for(int j=1;j<=i;j++)
+	    {
+		System.out.print(j);
+	    }
+	System.out.println();
+	}
+	*/
+		
+	/*
+	 54321	
+	 5432
+	 543
+	 54
+	 5
+		 
+	for(int i=1;i<=5;i++)
+	{
+	   for(int j=5;j>=i;j--)
+	    {
+		System.out.print(j);
+	    }
+	System.out.println();
+	}
+	*/
+			
+	/*
+	 5
+	 45
+	 345
+	 2345
+	 12345
+	 
+	for(int i=5;i>=1;i--)
+	{
+	   for(int j=i;j<=5;j++)
+	    {
+		System.out.print(j);
+	    }
+	System.out.println();
+	}	
+	*/
+		
+	/*
+	 1
+	 21
+	 321
+	 4321
+	 54321
+		 
+	for(int i=1;i<=5;i++)
+	{
+	   for(int j=i;j>=1;j--)
+	    {
+		System.out.print(j);
+	    }
+	System.out.println();
+	}
+	*/
+			
+	/*	
+	 5
+	 44
+	 333
+	 2222
+	 11111
+		 
+	for(int i=5;i>=1;i--)
+	{
+	   for(int j=i;j<=5;j++)
+	    {
+		System.out.print(i);
+	     }
+	System.out.println();
+	}
+	*/
+
+	/*
+	****
+	***
+	**
+	*
+	 
+	for(int i=1;i<=4;i++) 
+	{
+   	   for(int j=4;j>=i;j--) 
+	    {
+	        System.out.print("*");
+	    }
+	System.out.println();
+	}
+	*/
+	/*
+	
+	 55555
+	 4444
+	 333
+	 22
+	 1
+ 
+	for(int i=5;i>=1;i--)
+	{
+           for(int j=1;j<=i;j++)
+	   {
+		System.out.print(i);
+	   }
+	System.out.println();
+	}
+	*/
+	
+	/*
+	 2
+	 24
+	 246
+	 2468
+	 246810
+		 
+	for(int i=1;i<=5;i++) 
+	{
+	   for(int j=1;j<=i;j++)
+	   {
+		System.out.print(j*2+"");
+	   }
+	System.out.println();
+	}
+	*/
+		
+	/*
+	 1
+	 10	
+	 101
+	 1010
+	 10101
+		 
+	for(int i=1;i<=5;i++) 
+	{
+	   for(int j=1;j<=i;j++)
+	   {
+	 	System.out.print(j%2);
+	   }
+	System.out.println();
+	}
+	*/
+  
+	/*
+	     5
+	    45
+	   345
+	  2345
+	 12345
+	     	
+	for(int i=5;i>=1;i--) 
+	{
+	   for(int k=i-1;k>=1;k--)
+	   {
+		System.out.print(" ");
+	   }
+	   for(int j=i;j<=5;j++)
+           {
+		System.out.print(j);
+		}
+	System.out.println();
+	}
+	*/
+		
+	/*
+    	     1
+	    21
+	   321
+          4321
+         54321
+	    
+	for(int i=1;i<=5;i++) 
+	{
+	   for(int k=5-i;k>=1;k--)
+	   {
+		System.out.print(" ");
+	   }
+	   for(int j=i;j>=1;j--)
+	   {
+		System.out.print(j);
+	   }
+	System.out.println();
+	}
+	*/
+	/*
+	    5
+	   54
+	  543
+	 5432
+	54321 
+	 
+	for(int i=5;i>=1;i--) 
+	{
+	   for(int k=i-1;k>=1;k--)
+	   {
+		System.out.print(" ");
+	   }
+	   for(int j=5;j>=i;j--)
+	   {
+		System.out.print(j);
+	   }
+	System.out.println();
+	}
+	*/
+
+	/*
+	      1 
+	     12
+            123    
+           1234  
+        for(int i=1;i<=4;i++) 
+	{
+	   for(int k=4-i;k>=1;k--)
+	   {
+	 	System.out.print(" ");
+	   }
+	   for(int j=1;j<=i;j++)
+	   {
+		System.out.print(j);
+	   }
+	System.out.println();
+	} 
+        */
+	
+	/*
+	    a
+	    ab
+	    abc
+	    abcd
+		 
+	char c;
+	for(int i=1;i<5;i++) 
+	{
+	   c='a';
+	   for(int j=1;j<=i;j++) 
+  	   {
+	 	System.out.print(c+"");
+		c++;
+	   }
+	System.out.println();
+	}
+	*/
+
+	/*
+	   2
+	   23
+	   235
+ 	   2357
+	   235711
+ 	   23571113
+	
+	for(int 
+	*/
+
+    }
+}
+
+

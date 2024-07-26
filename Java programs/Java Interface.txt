@@ -1,0 +1,95 @@
+interface printables{
+    /* 	void print(){
+           System.out.println("Hello");	
+	}
+   */
+   
+	 default void print(){
+        System.out.println("Hello");
+    }
+}
+
+class Printer implements printables{
+   
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+	  Printer p1=new Printer();
+	  p1.print();
+	}
+}
+
+*********************************************
+
+interface printables{
+    
+    static void print(){
+        System.out.println("Hello");
+    }
+}
+
+class Printer implements printables{
+   
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+	  Printer p1=new Printer();
+	  printables.print();
+	}
+}
+
+***********************************************
+
+interface printables{
+    void print();
+}
+
+class Printer implements printables{
+   public void print(){
+       System.out.println("Printer class");
+   }
+}
+
+class Scanner implements printables{
+   public void print(){
+       System.out.println("Scanner class");
+   }
+}
+
+
+class Fax implements printables{
+   public void print(){
+       System.out.println("Fax class");
+   }
+}
+
+class Document{
+    private printables device;
+    Document(printables device){
+        this.device=device;
+    }
+    void printDoc(){
+        this.device.print();
+    }
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+	  printables printer=new Printer();
+	  printables scanner=new Scanner();
+	  printables fax=new Fax();
+	  
+	  Document d1=new Document(printer);
+	  Document d2=new Document(scanner);
+	  Document d3=new Document(fax);
+	  
+	  d1.printDoc();
+	  d2.printDoc();
+	  d3.printDoc();
+	}
+}

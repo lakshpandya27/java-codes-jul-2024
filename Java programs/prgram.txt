@@ -1,0 +1,91 @@
+System.out.println("int min = " + Integer.MIN_VALUE); // -2147483648
+System.out.println("int max = " + Integer.MAX_VALUE); // 2147483647
+System.out.println();
+
+1) 
+package program;
+public class Program {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub	
+		int a=1;
+		while(a>=1)
+		{
+			a++;
+		}
+		System.out.println(a);
+	}
+}
+
+**************************
+
+package program;			//Abundant number or not
+public class Program {
+    public static void main(String[] args) {
+	 Scanner s=new Scanner(System.in);	
+  	  int n,sum=0;
+	  System.out.println("Enter a number: ");
+	  n=s.nextInt();
+	  for(int i=1;i<n;i++) {
+	  if(n%i==0) 
+	    {
+	      sum+=i;
+	      System.out.println(i+"");
+	     }
+	  }
+	  if(sum>n)
+	     System.out.println("Abundant number");
+	  else
+	     System.out.println("Not Abundant number");
+
+*************************
+package program;			//Friendly pair numbers or not
+public class Program {
+    public static void main(String[] args) {
+	 Scanner s=new Scanner(System.in);	
+	   int n1,n2,s1=0,s2=0;
+	   System.out.println("Enter a numbers: ");
+	   n1=s.nextInt();
+	   n2=s.nextInt();
+	   for(int i=1;i<n1;i++) 
+ 	    {
+   	      if(n1%i==0) 
+		 s1+=i;
+            }
+	   for(int j=1;j<n2;j++) 
+ 	    { 
+	      if(n2%j==0)
+		 s2+=j;
+	    }
+	  if(s1/n1==s2/n2) 
+		System.out.println("Friendly pair");
+	  else
+		System.out.println("Not friendly pair");
+
+****************************
+
+package program;		//thief stealing money from house
+import java.util.Scanner;	    //ques in 2D array in note	
+public class Program {
+	static int way(int a[],int n) {
+	   if(n<0) {
+		return 0;
+	   }
+	   if(n==0) {
+		return a[0];
+	   }
+	 int p=a[n]+way(a,n-2);
+	 int np=way(a,n-1);
+	 return Math.max(p,np);
+	}
+   public static void main(String[] args) {
+     Scanner s=new Scanner(System.in);	
+	int n=s.nextInt();
+	int a[]=new int[n];
+	for(int i=0;i<n;i++) {
+	   a[i]=s.nextInt();
+	}
+      System.out.print("Max: "+way(a,n-1));
+
+**************************
+
+

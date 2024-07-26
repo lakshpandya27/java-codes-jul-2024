@@ -1,0 +1,83 @@
+
+import java.util.Scanner;
+class Product{
+    int pid;
+    String name;
+    float price;
+    Product(){
+        System.out.print("-----------------");   
+        System.out.print("-----------------"); 
+    }
+  void setproduct(int pid,String name,float price){
+        this.pid=pid;
+        this.name=name;
+        this.price=price;
+    }
+
+   void showproduct(){
+        System.out.println("Product Id----->:"+this.pid);
+        System.out.println("Name----->:"+this.name);
+        System.out.println("Price----->:"+this.price);
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner s=new Scanner(System.in);
+	Product p1=new Product();
+	p1.setproduct(001,"Vivo F11",30000);
+	p1.showproduct();
+	
+	Product p2=new Product();
+	p2.setproduct(002,"Samsung Galaxy",60000);
+	p2.showproduct();
+	}
+}
+
+****************************************
+
+import java.util.Scanner;
+class Shape{
+    int l,b,rad,s;
+}
+class Rectangle extends Shape{
+    void value(int l,int b){
+        this.l=l;
+        this.b=b;
+    }
+    void rectarea(){
+        System.out.println("Area of Rectangle: "+l*b);
+    }
+}
+class Circle extends Shape{
+    void value(int rad){
+        this.rad=rad;
+    }
+    void circarea(){
+        System.out.println("Area of Circle: "+Math.PI*rad*rad);
+    }
+}
+class Square extends Shape{
+    void value(int s){
+        this.s=s;
+    }
+    void sqrarea(){
+        System.out.println("Area of Square: "+s*s);
+    }
+}
+class Main{
+    public static void main(String args[]){
+        Rectangle r=new Rectangle();
+        r.value(5,10);
+        r.rectarea();
+        Circle c=new Circle();
+        c.value(5);
+        c.circarea();
+        Square sq=new Square();
+        sq.value(3);
+        sq.sqrarea();
+    }
+}
+
+*****************************************
+
